@@ -1,0 +1,11 @@
+﻿language=ru
+language.enum=en,ru,ua
+language.en=English
+language.ru=Русский
+language.ua=Українська
+Picture.Size=615,235
+System.Scaling=50
+dev_menu=1
+Net.InputPort=2000
+Net.OutputPort=2000
+AskSaveClosing=1

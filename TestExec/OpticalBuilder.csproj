@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{290B6095-00FE-40C6-9352-E741C036EDDB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpticalBuilder</RootNamespace>
+    <AssemblyName>OpticalBuilder</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>Icon1.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tao.DevIl, Version=1.6.8.3, Culture=neutral, PublicKeyToken=7ec4053013524957, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\TaoFramework\bin\Tao.DevIl.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.FreeGlut, Version=2.4.0.2, Culture=neutral, PublicKeyToken=6e602a6ad6c0d06d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\TaoFramework\bin\Tao.FreeGlut.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.OpenGl, Version=2.1.0.12, Culture=neutral, PublicKeyToken=1ca010269a4501ef, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\TaoFramework\bin\Tao.OpenGl.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.Platform.Windows, Version=1.0.0.5, Culture=neutral, PublicKeyToken=701104b2da67a104, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\TaoFramework\bin\Tao.Platform.Windows.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeFunctions.cs" />
+    <Compile Include="Configuration\Configuration.cs" />
+    <Compile Include="Configuration\SConfig.cs" />
+    <Compile Include="Configuration\STranslation.cs" />
+    <Compile Include="Configuration\Translation.cs" />
+    <Compile Include="Forms\ConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConfigForm.Designer.cs">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormHelp.Designer.cs">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstrumentPolygon.cs" />
+    <Compile Include="InstrumentSphericalMirror.cs" />
+    <Compile Include="InstrumentHand.cs" />
+    <Compile Include="InstrumentLenseMenisksTwoOkrs.cs" />
+    <Compile Include="InstrumentLupa.cs" />
+    <Compile Include="InstrumentLenseNoMenisksTwoOkrs.cs" />
+    <Compile Include="InstrumentSelectAndMove.cs" />
+    <Compile Include="Drawing\CircleDrawer.cs" />
+    <Compile Include="Drawing\LineDrawer.cs" />
+    <Compile Include="Drawing\MirrorDrawer.cs" />
+    <Compile Include="Drawing\OGL.cs" />
+    <Compile Include="EventArguments\ConfigurationChangeArgs.cs" />
+    <Compile Include="EventArguments\ImageChangeArgs.cs" />
+    <Compile Include="EventArguments\LanguageChangeArgs.cs" />
+    <Compile Include="Exceptions\DrawingLineError.cs" />
+    <Compile Include="Exceptions\ErrorWhileReading.cs" />
+    <Compile Include="Exceptions\InitializedListLookupFailed.cs" />
+    <Compile Include="Exceptions\InnerException.cs" />
+    <Compile Include="Exceptions\MyException.cs" />
+    <Compile Include="Exceptions\NotImplementedYet.cs" />
+    <Compile Include="Exceptions\ObjectsListAccessException.cs" />
+    <Compile Include="Exceptions\PrecisionError.cs" />
+    <Compile Include="Forms\ConfirmClear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConfirmClear.Designer.cs">
+      <DependentUpon>ConfirmClear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SaveBeforeClosing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SaveBeforeClosing.Designer.cs">
+      <DependentUpon>SaveBeforeClosing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstrumentBrightPoint.cs" />
+    <Compile Include="InstrumentMirror.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstrumentBase.cs" />
+    <Compile Include="InstrumentRay.cs" />
+    <Compile Include="InstrumentSphere.cs" />
+    <Compile Include="MathLib\Angle.cs" />
+    <Compile Include="MathLib\Circle.cs" />
+    <Compile Include="MathLib\CoordinateSystem.cs" />
+    <Compile Include="MathLib\Line.cs" />
+    <Compile Include="MathLib\Polygon.cs" />
+    <Compile Include="MathLib\SystemCoordinates.cs" />
+    <Compile Include="OpticalObjects\BrightPoint.cs" />
+    <Compile Include="OpticalObjects\OPolygon.cs" />
+    <Compile Include="OpticalObjects\SphereMirror.cs" />
+    <Compile Include="OpticalObjects\Lense.cs" />
+    <Compile Include="OpticalObjects\Interface1.cs" />
+    <Compile Include="OpticalObjects\Mirror.cs" />
+    <Compile Include="OpticalObjects\ObjCollection.cs" />
+    <Compile Include="OpticalObjects\ObjectProto.cs" />
+    <Compile Include="OpticalObjects\Ray.cs" />
+    <Compile Include="OpticalObjects\Sphere.cs" />
+    <Compile Include="Option.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="PropertiesList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertiesList.Designer.cs">
+      <DependentUpon>PropertiesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Separator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Separator.Designer.cs">
+      <DependentUpon>Separator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThreePosBtn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThreePosBtn.Designer.cs">
+      <DependentUpon>ThreePosBtn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TypeExtentions\DoubleComparator.cs" />
+    <Compile Include="TypeExtentions\DoubleExtention.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConfigForm.resx">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConfirmClear.resx">
+      <DependentUpon>ConfirmClear.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormHelp.resx">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SaveBeforeClosing.resx">
+      <DependentUpon>SaveBeforeClosing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesList.resx">
+      <DependentUpon>PropertiesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaveBeforeClosing.resx">
+      <DependentUpon>SaveBeforeClosing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Separator.resx">
+      <DependentUpon>Separator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThreePosBtn.resx">
+      <DependentUpon>ThreePosBtn.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Configuration.obc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Help\Help.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Languages\en.obl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Languages\keys.obl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Languages\ru.obl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Languages\ua.obl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SaveBeforeClosing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaveBeforeClosing.Designer.cs">
+      <DependentUpon>SaveBeforeClosing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaveFiles\SaveLoad.cs" />
+    <None Include="Resources\Configuration.obc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DevIL.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="freeglut.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_circle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_circle3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_circle3_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_circle3_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_circle3_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_circle_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_circle_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_circle_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_hand.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_hand_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_hand_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_hand_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_linz.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_linz_vip.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_linz_vip_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_linz_vip_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_linz_vip_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_linz_vp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_linz_vp_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_linz_vp_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_linz_vp_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_luch.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_luch_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_luch_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_luch_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_lup.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_lup_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_lup_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_lup_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_mirror.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_mirrorc.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_mirrorc_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_mirrorc_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_mirrorc_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_mirror_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_mirror_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_mirror_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_point.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_point_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_point_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_point_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_polygon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_polygon_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_polygon_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_polygon_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_select_move.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_select_move_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_select_move_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_select_move_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sep.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tao.DevIl.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tao.FreeGlut.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tao.OpenGl.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tao.Platform.Windows.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Configuration.txt" />
+    <Content Include="Icon1.ico" />
+    <Content Include="Images\cursors\CursorZoomOut.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\cursors\CursorZoomIn.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Configuration.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль .NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Установщик Windows 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\" />
+    <Folder Include="Saves\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
