@@ -27,7 +27,7 @@ This application is written in C#, and uses Adobe Reader to show Help (right now
 
 ## Project History
 
-Originally this program was made as a school project in [LIT](http://www.lit.dp.ua) (Dnipropetrovsk, Ukraine) and I wrote it without any knowledge of things like JSON, Version Control (and versioning in general), did not have strong foundation in OOP, etc.  I might rework it when I have free time. 
+Originally this program was made as a school project in [LIT](http://www.lit.dp.ua) (Dnipropetrovsk, Ukraine) and as project for Defense Contest of Minor Academy of Sciences of Ukraine [MAN](http://man.gov.ua/) and I wrote it without any knowledge of things like JSON, Version Control (and versioning in general), did not have strong foundation in OOP, etc.  I might rework it when I have free time. 
 
 ## License
 
